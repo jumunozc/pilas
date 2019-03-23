@@ -91,7 +91,7 @@ public class List {
 	public void insertAtIndex(Node newNode, int index)
 	{
 		Node temp = head;
-		for (int i = 0; i < index; i++) {
+		for (int i = 0; i < index-1; i++) {
 			temp = temp.getNext();
 		}
 		newNode.setNext(temp.getNext());
@@ -116,10 +116,16 @@ public class List {
 	 */
 	public void deleteAtEnd()
 	{
+		
 		Node temp = head;
+		Node pre = temp;
 		while(temp.getNext() != null) {
+			pre = temp;
 			temp = temp.getNext();
 		}
+		temp = null;
+		pre.setNext(null);
+		System.gc();
 
 	}
 
