@@ -376,11 +376,12 @@ public class List {
 	 */
 	public int length()
 	{
-		int cuenta=1;
+		int cuenta=0;
 		Node temp=head;
-		while(temp.getNext()!=null) {
-			temp=temp.getNext();
+		while(temp !=null) {
 			cuenta=cuenta+1;
+			temp=temp.getNext();
+			
 
 		}
 		return cuenta;
@@ -402,8 +403,6 @@ public class List {
 		}
 		return clone;
 	}
-
-
 	/**
 	 * 
 	 * @param list
