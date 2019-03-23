@@ -72,6 +72,7 @@ public class List {
 	 */
 	public void insertAtEnd(Node newNode)
 	{
+		if(isEmpty()) head = newNode;
 		Node temp = head;
 		while(temp.getNext() != null) {
 			temp = temp.getNext();
@@ -371,7 +372,14 @@ public class List {
 	 */
 	public List cloneList()
 	{
-		return null;
+		List clone = new List();
+		Node temp = head;
+		while(temp != null) {
+			clone.insertAtEnd(temp.clone());
+			temp = temp.getNext();
+			
+		}
+		return clone;
 	}
 
 

@@ -44,14 +44,18 @@ public class Prueba	implements Node{
 		}
 		public static void main(String[] args) {
 			List x= new List();
-			/*Queue cola=new Queue();
+			Queue cola=new Queue();
 			cola.enqueue(new Prueba(1));
-			cola.enqueue(new Prueba(3));*/
-			x.insertAtBegin(new Prueba(2));
+			cola.enqueue(new Prueba(3));
+			/*x.insertAtBegin(new Prueba(2));
 			x.insertAtBegin(new Prueba(3));
 			x.insertAtBegin(new Prueba(4));
 			x.insertAtEnd(new Prueba(1));
 			x.insertAtIndex(new Prueba(5), 2);
+			
+			List p = x.cloneList();
+			p.printList();*/
+			System.out.println();
 			x.deleteAtEnd();
 			//System.out.println(x.get(3).toString());
 			x.printList();
