@@ -116,7 +116,7 @@ public class List {
 	 */
 	public void deleteAtEnd()
 	{
-		
+
 		Node temp = head;
 		Node pre = temp;
 		while(temp.getNext() != null) {
@@ -256,9 +256,25 @@ public class List {
 	 * @param node
 	 * @return
 	 */
-	public Node binarySearch(Node node)
+	public int binarySearch(Node node)
 	{
-		return null;
+		int lower_bo = 0, uper_bo = this.length()-1;
+		int middle = 0, index = -1;
+		
+		while(uper_bo>lower_bo) {
+			middle = (lower_bo + uper_bo)/2;
+			
+			if(get(middle).isEqual(node)) {
+				index = middle;
+				break;
+			}
+			else if(get(middle).isLessThan(node)) {
+				lower_bo = middle+1;
+			}else {
+				uper_bo = middle-1;
+			}
+		}
+		return index;
 	}
 
 
@@ -381,7 +397,7 @@ public class List {
 		while(temp !=null) {
 			cuenta=cuenta+1;
 			temp=temp.getNext();
-			
+
 
 		}
 		return cuenta;
@@ -399,7 +415,7 @@ public class List {
 		while(temp != null) {
 			clone.insertAtEnd(temp.clone());
 			temp = temp.getNext();
-			
+
 		}
 		return clone;
 	}
