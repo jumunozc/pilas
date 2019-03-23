@@ -438,10 +438,10 @@ public class List {
 	public Node get(int index)
 	{
 		Node temp=head;
-		for (int i = 0; i < index-1; i++) {
+		for (int i = 0; i < index; i++) {
 			temp=temp.getNext();
 		}
-		return temp;
+		return temp.clone();
 	}
 
 

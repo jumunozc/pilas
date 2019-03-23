@@ -63,6 +63,7 @@ public class Prueba	implements Node{
 			System.out.println();
 			
 			//System.out.println(x.get(3).toString());
+			System.out.println(x.get(3));
 			x.printList();
 
 		}
