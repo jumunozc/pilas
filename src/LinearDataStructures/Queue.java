@@ -57,8 +57,8 @@ public class Queue {
 	{
 		Node temp = head;
 		head = temp.getNext();
-		temp = null;
-		System.gc();
+		temp.setNext(null);
+		
 		return temp;
 	}
 }
