@@ -349,7 +349,22 @@ public class List {
 	 */
 	public List sublist(int begin, int end)
 	{
+
 		List subList = new List();
+
+		if(begin < this.length()&& end < this.length() && begin < end)
+		{
+			Node temp = head;
+
+			for(int i = 0; i < begin; i++)
+				temp = temp.getNext();
+
+			for(int i = 0; i< end - begin ;i++)
+			{
+				subList.insertAtEnd(temp.clone());
+				temp = temp.getNext();
+			}
+		}
 
 		return subList;
 	}
