@@ -53,8 +53,7 @@ public class Stack {
 	{
 		Node temp = top;
 		top = temp.getNext();
-		temp = null;
-		System.gc();
+		temp.setNext(null);
 		return temp;
 	}
 	

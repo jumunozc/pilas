@@ -55,15 +55,20 @@ public class Prueba	implements Node{
 			x.insertAtIndex(new Prueba(250), 3);
 			x.deleteAtEnd();
 			
+			
+
+			
 			List p = x.cloneList();
 			p.printList();
 			System.out.println();
-			List sub = x.sublist(1, 4);
-			sub.printList();
+			/*List sub = x.sublist(1, 4);
+			sub.printList();*/
 			System.out.println();
 			
 			//System.out.println(x.get(3).toString());
-			System.out.println(x.get(3));
+			List aja = x.quickSort(x);
+			aja.printList();
+			
 			x.printList();
 
 		}

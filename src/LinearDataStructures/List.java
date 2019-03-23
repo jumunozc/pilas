@@ -269,7 +269,7 @@ public class List {
 				break;
 			}
 			else if(get(middle).isLessThan(node)) {
-				lower_bo = middle+1;
+				lower_bo = middle +1;
 			}else {
 				uper_bo = middle-1;
 			}
