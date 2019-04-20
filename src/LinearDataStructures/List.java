@@ -72,14 +72,16 @@ public class List {
 	 */
 	public void insertAtEnd(Node newNode)
 	{
-		if(isEmpty()) head = newNode;
-		Node temp = head;
-		while(temp.getNext() != null) {
-			temp = temp.getNext();
+		if(isEmpty()) head=newNode;
+		
+		Node temp=head;
+		while(temp.getNext()!=null) {
+			temp=temp.getNext();
+
 		}
+
 		temp.setNext(newNode);
 		newNode.setNext(null);
-
 	}
 
 
@@ -90,12 +92,13 @@ public class List {
 	 */
 	public void insertAtIndex(Node newNode, int index)
 	{
-		Node temp = head;
+		Node temp=head;
 		for (int i = 0; i < index-1; i++) {
-			temp = temp.getNext();
+			temp=temp.getNext();
 		}
 		newNode.setNext(temp.getNext());
 		temp.setNext(newNode);
+
 	}
 
 
@@ -116,17 +119,12 @@ public class List {
 	 */
 	public void deleteAtEnd()
 	{
-
-		Node temp = head;
-		Node pre = temp;
-		while(temp.getNext() != null) {
-			pre = temp;
-			temp = temp.getNext();
+		Node temp=head;
+		while(temp.getNext().getNext()!=null) {
+			temp=temp.getNext();
 		}
-		temp = null;
-		pre.setNext(null);
+		temp.setNext(null);
 		System.gc();
-
 	}
 
 
@@ -139,7 +137,7 @@ public class List {
 		Node temp = head;
 		Node toDelete;
 
-		for(int i = 0; i < index - 1; i++)
+		for(int i = 0; i < index ; i++)
 			temp = temp.getNext();
 
 		toDelete = temp.getNext(); 
@@ -303,6 +301,7 @@ public class List {
 	 */
 	public List quickSort(List unsorted)
 	{
+		
 		if(unsorted.length() <= 1)
 		{
 			return unsorted;	
@@ -365,7 +364,6 @@ public class List {
 	 */
 	public List sublist(int begin, int end)
 	{
-
 		List subList = new List();
 
 		if(begin < this.length()&& end < this.length() && begin < end)
@@ -394,13 +392,14 @@ public class List {
 	{
 		int cuenta=0;
 		Node temp=head;
-		while(temp !=null) {
+		while(temp!=null) {
 			cuenta=cuenta+1;
 			temp=temp.getNext();
-
+			
 
 		}
 		return cuenta;
+
 	}
 
 
@@ -410,15 +409,21 @@ public class List {
 	 */
 	public List cloneList()
 	{
-		List clone = new List();
-		Node temp = head;
-		while(temp != null) {
+		List clone= new List();
+		Node temp=head;
+		while(temp!=null) {
 			clone.insertAtEnd(temp.clone());
-			temp = temp.getNext();
+			temp=temp.getNext();
+			
 
 		}
 		return clone;
+
+
+
 	}
+
+
 	/**
 	 * 
 	 * @param list
@@ -454,10 +459,10 @@ public class List {
 	public Node get(int index)
 	{
 		Node temp=head;
-		for (int i = 0; i < index; i++) {
+		for (int i = 0; i < index-1; i++) {
 			temp=temp.getNext();
 		}
-		return temp.clone();
+		return temp;
 	}
 
 
@@ -484,3 +489,11 @@ public class List {
 		return index;
 	}
 }
+
+
+
+
+
+
+
+

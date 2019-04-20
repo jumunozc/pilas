@@ -41,7 +41,8 @@ public class Stack {
 	public void push(Node newNode)
 	{
 		newNode.setNext(top);
-		top = newNode;
+		top=newNode;
+		
 	}
 	
 	
@@ -51,10 +52,11 @@ public class Stack {
 	 */
 	public Node pop()
 	{
-		Node temp = top;
-		top = temp.getNext();
-		temp.setNext(null);
+		Node temp=top;
+		top=top.getNext();
+		System.gc();
 		return temp;
+		
 	}
 	
 	
@@ -64,7 +66,6 @@ public class Stack {
 	 */
 	public String peek()
 	{
-		
 		return top.toString();
 	}
 	
