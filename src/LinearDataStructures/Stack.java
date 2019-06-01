@@ -1,6 +1,5 @@
 package LinearDataStructures;
 
-
 import java.io.*;
 
 public class Stack {
