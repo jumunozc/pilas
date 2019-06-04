@@ -51,7 +51,8 @@ public class List {
 			}
 			bw.flush();
 		}
-		catch(Exception ex) { ex.printStackTrace(); }
+		catch(Exception ex) {
+			ex.printStackTrace(); }
 	}
 
 
