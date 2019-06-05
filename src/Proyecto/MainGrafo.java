@@ -16,14 +16,18 @@ public class MainGrafo {
 			cadena = br.readLine();
 	
 			while(cadena!=null) {
-				String[] entrada = cadena.split(" ");
+				
+				String[] entrada = cadena.split(",");
+				
 				int nodo = Integer.parseInt(entrada[0]);
 				int arista = Integer.parseInt(entrada[1]);
+				
 				grafo.conexionesGrafo(new NodoGrafo (nodo), new NodoArista(arista));
 				cadena=br.readLine();
 			}
 			grafo.imprimirGrafo();
-			grafo.mayorConexiones(grafo);
+			System.out.println();
+			System.out.println(grafo.mayorConexiones(grafo));
 			br.close();
 
 		} catch (FileNotFoundException e) {

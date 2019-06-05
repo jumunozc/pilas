@@ -50,9 +50,28 @@ public class Grafo {
 			e.printStackTrace();
 		}
 	}
-	public void mayorConexiones (Grafo grafo) {
+	public String mayorConexiones (Grafo grafo) {
+
+
+		NodoGrafo mayorConexiones=(NodoGrafo)grafo.listaNodos.head;
 		
+		int mayor = mayorConexiones.conexion.length();
+		int usuario = mayorConexiones.dato;
 		
+		while (mayorConexiones!=null) {
+			
+			if(mayorConexiones.conexion.length()> mayor  ) {
+				mayor = mayorConexiones.conexion.length();
+				usuario = mayorConexiones.dato;
+				
+			}
+			
+			mayorConexiones = mayorConexiones.next;
+			
+		}
+		return "El usuario #: "+usuario+" tiene la mayor cantidad de conexiones equivalentes a: "+mayor;
+
+
 
 	}
 }
