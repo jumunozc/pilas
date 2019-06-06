@@ -38,9 +38,9 @@ public class Grafo {
 		try {
 
 			while(temp!=null) {
-				bw.write(temp.toString());
-				temp.conexion.printList();
+				bw.write(temp.toString()+" ");
 				bw.flush();
+				temp.conexion.printList();
 				bw.write(" \n");
 				temp=(NodoGrafo)temp.getNext();
 
