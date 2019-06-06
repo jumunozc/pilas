@@ -99,7 +99,7 @@ public class Grafo {
 	
 	public int desviacionEstandar(Grafo grafo)  {
 
-		NodoGrafo conexiones =( NodoGrafo)grafo.listaNodos.head;
+		NodoGrafo conexiones =(NodoGrafo)grafo.listaNodos.head;
 		int contador = 0;
 
 		int promedio = promedioConexiones(grafo);
