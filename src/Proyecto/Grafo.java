@@ -152,6 +152,14 @@ public class Grafo {
 		return contadorRango;
 
 	}
+	
+	public int coeficienteDeVariacion (int promedio, int desviacion) {
+		
+		int formula = (desviacion/promedio);
+		
+		return formula;
+	
+	}
 
 }
 

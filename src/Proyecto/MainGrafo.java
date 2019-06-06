@@ -33,7 +33,9 @@ public class MainGrafo {
 			grafo.imprimirGrafo();
 			bw.write(" \n");
 			bw.write("DESVIACION ESTANDAR"+"\n");
-			bw.write("El grafo tiene una medida de : "+(int)grafo.desviacionEstandar(grafo) +" nodos de dispersión."+"\n");
+			bw.write("El grafo tiene una desviacion de : "+grafo.desviacionEstandar(grafo)+"\n");
+			bw.write("COEFICIENTE DE VARIACION"+"\n");
+			bw.write("La dispersion de este conjunto de datos es de: "+grafo.coeficienteDeVariacion(grafo.promedioConexiones(grafo), grafo.desviacionEstandar(grafo))+"\n");
 			bw.write("PROMEDIO DE CONEXIONES"+"\n");
 			bw.write("El promedio de conexiones por usuario es de :"+grafo.promedioConexiones(grafo)+" conexiones."+"\n");	
 			bw.write("MAYOR CANTIDAD DE CONEXIONES"+"\n");
