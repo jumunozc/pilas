@@ -81,20 +81,20 @@ public class Grafo {
 		NodoGrafo mayorConexiones=(NodoGrafo)grafo.listaNodos.head;
 
 		int mayor = mayorConexiones.conexion.length();
-		int x = mayorConexiones.dato;
+		int usuarios = mayorConexiones.dato;
 
 		while (mayorConexiones != null) {
 
 			if(mayorConexiones.conexion.length()> mayor  ) {
 
 				mayor = mayorConexiones.conexion.length();
-				x = mayorConexiones.dato;
+				usuarios = mayorConexiones.dato;
 			}
 
 			mayorConexiones = mayorConexiones.next;
 			
 		}
-		return x/grafo.listaNodos.length();
+		return usuarios/grafo.listaNodos.length();
 	}
 	
 	public int desviacionEstandar(Grafo grafo)  {
