@@ -1,0 +1,43 @@
+public void dijikstra(Grafo grafo) {
+
+		NodoGrafo conexiones = (NodoGrafo)grafo.listaNodos.head;
+
+		int v = conexiones.conexion.length();
+		boolean visitado [] = new boolean[v];
+		int distancia [] = new int [v];
+		distancia[0] = 0;
+
+		for (int i = 1; i < v; i++) {	
+			distancia[i] = Integer.MAX_VALUE;
+		}
+		for (int i = 0; i < v - 1; i++) {
+			int distMenor = verticeMenor(distancia, visitado);
+			visitado[distMenor] = true;
+
+			for (int j = 0; j < v ; j++) {
+				if(grafo != null && !visitado[j] && distancia[distMenor] != Integer.MAX_VALUE) {
+					int nuevaDist = distancia[distMenor] + conexiones.conexion.length();
+					if(nuevaDist < distancia[j]) {
+						distancia[j] = nuevaDist;
+					}
+				}
+
+			}
+		}
+		for (int i = 0; i < v; i++) {
+			System.out.println(i+" "+distancia[i]);
+
+		}
+
+
+	}
+
+	public int verticeMenor(int[] peso, boolean visitado[]) {
+		int verticeMin = -1;
+		for (int i = 0; i < peso.length; i++) {
+			if(!visitado[i] && (verticeMin == -1 || peso[i] < peso[verticeMin])) {
+				verticeMin = i;
+			}
+		}
+		return verticeMin;
+	}
