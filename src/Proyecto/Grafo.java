@@ -95,6 +95,7 @@ public class Grafo {
 		}
 		return mayor/grafo.listaNodos.length();
 	}
+	
 	public double desviacionEstandar(Grafo grafo)  {
 
 		NodoGrafo conexiones =( NodoGrafo)grafo.listaNodos.head;
@@ -103,6 +104,7 @@ public class Grafo {
 		int promedio = promedioConexiones(grafo);
 
 		while (conexiones!=null) {
+			
 			int sumatoria = 0;
 
 
@@ -125,41 +127,24 @@ public class Grafo {
 		NodoGrafo numConexiones =(NodoGrafo)grafo.listaNodos.head;
 		int conexion1 = 0;
 		int conexion2 = 0;
-		int conexion3 = 0;
-		int conexion4 = 0;
-		int conexion5 = 0;
-		int conexion6 = 0;
-		int conexion7 = 0;
 		
-		int[] contadorRango = new int[8];
+		int[] contadorRango = new int[2];
 		
 		while (numConexiones!=null) {
 
 			if(numConexiones.conexion.length()<=10) {
 				conexion1++;
-			}else if(numConexiones.conexion.length()> 10 &&numConexiones.conexion.length()<=50) {
+			
+			}else if(numConexiones.conexion.length()> 10 ) {
 				conexion2++;
-			}else if(numConexiones.conexion.length()> 50 &&numConexiones.conexion.length()<=100) {
-				conexion3++;
-			}else if(numConexiones.conexion.length()> 100 &&numConexiones.conexion.length()<=300) {
-				conexion4++;
-			}else if(numConexiones.conexion.length()> 300 &&numConexiones.conexion.length()<=600) {
-				conexion5++;
-			}else if(numConexiones.conexion.length()> 600 &&numConexiones.conexion.length()<=1200) {
-				conexion6++;
-			}else if(numConexiones.conexion.length()>1200) {
-				conexion7++;
+			
 			}
 
 			numConexiones=numConexiones.next;
 		}
 		contadorRango[0] = conexion1;
 		contadorRango[1] = conexion2;
-		contadorRango[2] = conexion3;
-		contadorRango[3] = conexion4;
-		contadorRango[4] = conexion5;
-		contadorRango[5] = conexion6;
-		contadorRango[6] = conexion7;
+
 
 		return contadorRango;
 

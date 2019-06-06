@@ -32,12 +32,12 @@ public class MainGrafo {
 			
 			grafo.imprimirGrafo();
 			bw.write(" \n");
-			bw.write("El grafo tiene una medida de : "+(int)grafo.desviacionEstandar(grafo) +" nodos de dispersión.");
-			bw.write(" \n");
-			bw.write("El promedio de conexiones por usuario es de :"+grafo.promedioConexiones(grafo)+" conexiones.");
-			bw.write(" \n");
+			bw.write("DESVIACION ESTANDAR"+"\n");
+			bw.write("El grafo tiene una medida de : "+(int)grafo.desviacionEstandar(grafo) +" nodos de dispersión."+"\n");
+			bw.write("PROMEDIO DE CONEXIONES"+"\n");
+			bw.write("El promedio de conexiones por usuario es de :"+grafo.promedioConexiones(grafo)+" conexiones."+"\n");	
+			bw.write("MAYOR CANTIDAD DE CONEXIONES"+"\n");
 			bw.write(grafo.mayorConexiones(grafo));
-			bw.write(" \n");
 			bw.flush();
 			br.close();
 
