@@ -38,13 +38,14 @@ public class Grafo {
 		try {
 
 			while(temp!=null) {
-				bw.write(temp.toString()+" ");
-				bw.flush();
+				bw.write(temp.toString());
 				temp.conexion.printList();
+				bw.flush();
 				bw.write(" \n");
 				temp=(NodoGrafo)temp.getNext();
 
 			}
+			
 
 		} catch (Exception e) {
 
@@ -126,18 +127,15 @@ public class Grafo {
 	public int[] rangoConexiones(Grafo grafo) {
 
 		NodoGrafo numConexiones =(NodoGrafo)grafo.listaNodos.head;
-		int conexion1 = 0;
-		int conexion2 = 0;
+		int conexion = 0;
 		
-		int[] contadorRango = new int[2];
+		
+		int[] contadorRango = new int[1];
 		
 		
 		do {
-			if(numConexiones.conexion.length()<=10) {
-				conexion1++;
-			
-			}else if(numConexiones.conexion.length()> 10 ) {
-				conexion2++;
+			if(numConexiones.conexion.length()> 10 ) {
+				conexion++;
 			
 			}
 
@@ -145,10 +143,8 @@ public class Grafo {
 			
 		} while (numConexiones!=null);
 		
-		contadorRango[0] = conexion1;
-		contadorRango[1] = conexion2;
-
-
+		contadorRango[0] = conexion;
+		
 		return contadorRango;
 
 	}
