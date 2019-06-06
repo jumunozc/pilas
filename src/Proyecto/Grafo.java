@@ -141,7 +141,7 @@ public class Grafo {
 
 			numConexiones=numConexiones.next;
 			
-		} while (numConexiones!=null);
+		} while (numConexiones!= null);
 		
 		contadorRango[0] = conexion;
 		
