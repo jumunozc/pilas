@@ -13,7 +13,7 @@ public class MainGrafo {
 			Grafo grafo = new Grafo();
 			String cadena;
 
-			FileReader bf = new FileReader("C:\\Users\\julian\\git\\pilas\\src\\Proyecto\\prueba");
+			FileReader bf = new FileReader("C:\\Users\\julian\\git\\pilas\\src\\Proyecto\\300k");
 			BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
 			BufferedReader br = new BufferedReader(bf);
 			cadena = br.readLine();
