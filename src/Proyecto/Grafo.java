@@ -96,7 +96,7 @@ public class Grafo {
 		return mayor/grafo.listaNodos.length();
 	}
 	
-	public double desviacionEstandar(Grafo grafo)  {
+	public int desviacionEstandar(Grafo grafo)  {
 
 		NodoGrafo conexiones =( NodoGrafo)grafo.listaNodos.head;
 		int contador = 0;
@@ -115,8 +115,9 @@ public class Grafo {
 			conexiones=conexiones.next;
 		}
 
-		int[]n = rangoConexiones(grafo);
-		double desviacionEstandar = Math.sqrt(contador/n[0]);
+		int[]numeroConexiones = rangoConexiones(grafo);
+		
+		int desviacionEstandar =(int) Math.sqrt(contador/(numeroConexiones[0]-1));
 
 		return desviacionEstandar;
 
@@ -130,8 +131,8 @@ public class Grafo {
 		
 		int[] contadorRango = new int[2];
 		
-		while (numConexiones!=null) {
-
+		
+		do {
 			if(numConexiones.conexion.length()<=10) {
 				conexion1++;
 			
@@ -141,7 +142,9 @@ public class Grafo {
 			}
 
 			numConexiones=numConexiones.next;
-		}
+			
+		} while (numConexiones!=null);
+		
 		contadorRango[0] = conexion1;
 		contadorRango[1] = conexion2;
 
